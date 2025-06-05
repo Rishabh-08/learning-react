@@ -51,13 +51,50 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     sans-serif;
   background-color: var(--background);
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  background-color: var(--background);
+  color: var(--primary);
+  font-weight: 700;
+  border-radius: 0.3em;
+  padding: 4px 5px 6px;
+  white-space: nowrap;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+li:hover {
+  background: var(--card-hover);
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(110, 158, 250, 0.15);
+}
+
+.results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 /* Table styles */
@@ -147,16 +184,21 @@ td:last-child {
 /* Header styles */
 .app-header {
   background-color: var(--card-bg);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 100;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  width: calc(100% - 2rem);
+  max-width: 1000px;
 }
 
 .header-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -213,7 +255,7 @@ td:last-child {
 .main-content {
   flex: 1;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 4rem auto;
   padding: 2rem;
   width: 100%;
 }
@@ -222,7 +264,7 @@ td:last-child {
 .home {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem;
 }
 
 .hero-section {
@@ -271,7 +313,7 @@ td:last-child {
 }
 
 .hook-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -339,17 +381,6 @@ td:last-child {
 .hook-card:hover .card-arrow {
   transform: translateX(4px);
   opacity: 1;
-}
-
-.soon-badge {
-  display: inline-block;
-  padding: 0.2rem 0.5rem;
-  background-color: var(--border);
-  border-radius: 4px;
-  color: var(--text-light);
-  font-size: 0.7rem;
-  font-weight: 500;
-  margin-top: 0.5rem;
 }
 
 /* Hook demo styles */
@@ -498,7 +529,7 @@ button:active {
   }
 
   .main-content {
-    padding: 1.5rem;
+    padding: 3rem 1.5rem;
   }
 
   .hero-section h2 {
@@ -540,7 +571,7 @@ button:active {
   }
 
   .main-content {
-    padding: 1rem;
+    padding: 2.5rem 1rem;
   }
 
   .card-icon {

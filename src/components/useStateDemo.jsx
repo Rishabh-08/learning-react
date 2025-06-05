@@ -25,7 +25,7 @@ function Counter() {
     <div className="hook-demo">
       <h2>useState Demo</h2>
       <p>
-        useState is a Hook that lets you add React state to function components.
+        <code>useState</code> is a Hook that lets you add React state to function components.
       </p>
       <div className="counter-example">
         <h3>Counter Example</h3>

@@ -16,7 +16,7 @@ const Header = () => {
             <span>Go Back</span>
           </button>
         ) : (
-          <h1 className="site-title">React Hooks</h1>
+          <h1 className="site-title">Reactverse</h1>
         )}
         <div className="theme-switch">
           <span className="theme-icon">

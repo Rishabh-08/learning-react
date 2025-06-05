@@ -1,9 +1,9 @@
-import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './layout/index';
 import Home from './components/Home';
 import UseStateDemo from './components/useStateDemo';
 import UseEffectDemo from './components/useEffectDemo';
+import UseRefDemo from './components/useRefDemo';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: 'use-effect',
         element: <UseEffectDemo />,
+      },
+      {
+        path: 'use-ref',
+        element: <UseRefDemo />,
       },
     ],
   },
