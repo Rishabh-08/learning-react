@@ -1,11 +1,12 @@
-import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { SquareArrowLeft, SunMoon } from 'lucide-react';
+import React from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { SquareArrowLeft } from "lucide-react";
+import ThemeToggleButton from "../components/ui/ThemeToggleButton";
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === "/";
 
   return (
     <header className="app-header">
@@ -18,11 +19,7 @@ const Header = () => {
         ) : (
           <h1 className="site-title">Reactverse</h1>
         )}
-        <div className="theme-switch">
-          <span className="theme-icon">
-            <SunMoon />
-          </span>
-        </div>
+        <ThemeToggleButton />
       </div>
     </header>
   );

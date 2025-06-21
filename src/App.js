@@ -1,13 +1,20 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import RootLayout from './layout/index';
-import Home from './components/Home';
-import UseStateDemo from './components/useStateDemo';
-import UseEffectDemo from './components/useEffectDemo';
-import UseRefDemo from './components/useRefDemo';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+//Config
+import RootLayout from "./layout/index";
+import { ThemeProvider } from "./context/ThemeContext";
+
+//Components
+import Home from "./components/Home";
+import UseStateDemo from "./components/useStateDemo";
+import UseEffectDemo from "./components/useEffectDemo";
+import UseRefDemo from "./components/useRefDemo";
+import UseContextDemo from "./components/useContextDemo";
+import UseCallbackDemo from "./components/useCallbackDemo";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <RootLayout />,
     children: [
       {
@@ -15,16 +22,24 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'use-state',
+        path: "use-state",
         element: <UseStateDemo />,
       },
       {
-        path: 'use-effect',
+        path: "use-effect",
         element: <UseEffectDemo />,
       },
       {
-        path: 'use-ref',
+        path: "use-ref",
         element: <UseRefDemo />,
+      },
+      {
+        path: "use-context",
+        element: <UseContextDemo />,
+      },
+      {
+        path: "use-callback",
+        element: <UseCallbackDemo />,
       },
     ],
   },
@@ -32,12 +47,14 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <RouterProvider
-      router={router}
-      future={{
-        v7_startTransition: true,
-        v7_relativeSplatPath: true,
-      }}
-    />
+    <ThemeProvider>
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true,
+        }}
+      />
+    </ThemeProvider>
   );
 }

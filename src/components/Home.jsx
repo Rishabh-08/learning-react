@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
   ChevronRight,
@@ -6,6 +5,7 @@ import {
   Sparkles,
   Globe,
   SearchCheck,
+  Repeat,
 } from "lucide-react";
 
 const Home = () => (
@@ -57,7 +57,7 @@ const Home = () => (
           <ChevronRight />
         </div>
       </Link>
-      <Link to="/" className="hook-card">
+      <Link to="/use-context" className="hook-card">
         <div className="card-icon">
           <span className="hook-emoji">
             <Globe />
@@ -66,6 +66,20 @@ const Home = () => (
         <div className="card-content">
           <h3>useContext</h3>
           <p>Share state across your component tree</p>
+        </div>
+        <div className="card-arrow">
+          <ChevronRight />
+        </div>
+      </Link>
+      <Link to="/use-callback" className="hook-card">
+        <div className="card-icon">
+          <span className="hook-emoji">
+            <Repeat />
+          </span>
+        </div>
+        <div className="card-content">
+          <h3>useCallback</h3>
+          <p>Lets you cache a function definition between re-renders</p>
         </div>
         <div className="card-arrow">
           <ChevronRight />

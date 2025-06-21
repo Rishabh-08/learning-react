@@ -1,5 +1,5 @@
 import { CircleChevronRight } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -132,7 +132,7 @@ export default function Demo() {
             ))}
           </ul>
         ) : (
-          <p>Type here to search and retrieve results !</p>
+          <p>Type here to search and retrieve product list ! Eg: Phone</p>
         )}
       </div>
     </div>
